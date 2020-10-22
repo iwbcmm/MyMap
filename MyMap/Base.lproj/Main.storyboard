@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rI9-l7-YZu">
+                                <rect key="frame" x="0.0" y="78" width="414" height="784"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-K0-GgQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="pLs-yX-RQu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="inputText:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="2a4-vI-cqk"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c3O-K0-GgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="15k-F8-jeY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c3O-K0-GgQ" secondAttribute="trailing" id="ARV-zE-y5w"/>
+                            <constraint firstItem="rI9-l7-YZu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Axe-By-Dpi"/>
+                            <constraint firstItem="c3O-K0-GgQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QFN-k0-sxL"/>
+                            <constraint firstItem="rI9-l7-YZu" firstAttribute="top" secondItem="c3O-K0-GgQ" secondAttribute="bottom" id="agm-iG-kOO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rI9-l7-YZu" secondAttribute="trailing" id="dx4-Mc-wcL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rI9-l7-YZu" secondAttribute="bottom" id="hLy-bz-oyy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dispMap" destination="rI9-l7-YZu" id="l58-aM-QHD"/>
+                        <outlet property="inputText" destination="c3O-K0-GgQ" id="3Pt-Yz-ym5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-64" y="125"/>
+        </scene>
+    </scenes>
+</document>
