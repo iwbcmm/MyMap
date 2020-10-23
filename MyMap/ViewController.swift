@@ -52,6 +52,21 @@ class ViewController: UIViewController , UITextFieldDelegate{
                             //緯度経度をデバックエリアに表示（１１）
                             print(targetCoordinate)
                             
+                            //MKPointAnnotationのインスタンスを取得し、ピンを生成（１２）
+                            let pin = MKPointAnnotation()
+                            
+                            //ピンの置く場所に緯度経度を設定（１３）
+                            pin.coordinate = targetCoordinate
+                            
+                            //ピンのタイトルを設定（１４）
+                            pin.title = searchKey
+                            
+                            //ピンを地図に置く（１５）
+                            self.dispMap.addAnnotation(pin)
+                            
+                            //緯度経度を中心にして半径500mの範囲を表示（１６）
+                            self.dispMap.region = MKCoordinateRegion(center: targetCoordinate, latitudinalMeters: 500.0, longitudinalMeters: 500.0)
+                            
                            }
                         
                        }
@@ -66,5 +81,23 @@ class ViewController: UIViewController , UITextFieldDelegate{
         //デフォルト動作を行うのでtrueを返す（４）
         return true
     }
+    
+    
+    @IBAction func changeMapButton(_ sender: Any) {
+        if dispMap.mapType == .standard{
+            dispMap.mapType = .satellite
+        } else if dispMap.mapType == .satellite{
+            dispMap.mapType = .hybrid
+        } else if dispMap.mapType == .hybrid{
+            dispMap.mapType = .satelliteFlyover
+        } else if dispMap.mapType == .satelliteFlyover{
+            dispMap.mapType = .hybridFlyover
+        } else if dispMap.mapType == .hybridFlyover{
+            dispMap.mapType = .mutedStandard
+        } else{
+            dispMap.mapType = .standard
+        }
+    }
+    
 }
 
